@@ -1,26 +1,87 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Emochi Soft Dark Palette */
+  --background: #0d0d0f; 
+  --foreground: #ffffff;
+  --card: #161618;
+  --accent: #d946ef;
+  --accent-foreground: #ffffff;
+  --muted: #a1a1aa;
+  --border: #27272a;
+  --secondary: #1f1f22;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-card: var(--card);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-muted: var(--muted);
+  --color-border-custom: var(--border);
+  --color-secondary-custom: var(--secondary);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Reset Dasar & Global Styles */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 body {
+  background-color: var(--background) !important;
+  color: var(--foreground) !important;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Perbaikan Input & Textarea ala Emochi */
+input, textarea {
+  background-color: #1f1f22 !important;
+  color: #ffffff !important;
+  border: 1px solid #27272a !important;
+  outline: none !important;
+}
+
+input:focus, textarea:focus {
+  border-color: var(--accent) !important;
+}
+
+input::placeholder, textarea::placeholder {
+  color: #52525b !important;
+}
+
+/* Custom Scrollbar Sleek */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
   background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3f3f46;
+}
+
+/* Utility Classes */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.glass-effect {
+  background: rgba(22, 22, 24, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }

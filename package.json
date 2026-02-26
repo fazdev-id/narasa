@@ -8,6 +8,10 @@
   "dependencies": {
     "next": "latest",
     "react": "latest",
+    "react-compiler-runtime": "^1.0.0",
     "react-dom": "latest"
+  },
+  "devDependencies": {
+    "babel-plugin-react-compiler": "^1.0.0"
   }
 }
