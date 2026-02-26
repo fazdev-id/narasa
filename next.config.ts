@@ -1,6 +1,6 @@
 import type { NextConfig } from "next";
 
-cconst nextConfig: NextConfig = {
+const nextConfig: NextConfig = {
   reactCompiler: {
     target: '18',
     runtimeModule: 'react-compiler-runtime',
